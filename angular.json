@@ -13,11 +13,17 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "si": "src/i18n/messages.si.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-i18n",
+            "outputPath": "dist/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -33,6 +39,9 @@
             "scripts": []
           },
           "configurations": {
+            "si": {
+              "localize": ["si"]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -71,6 +80,9 @@
           "configurations": {
             "production": {
               "browserTarget": "angular-i18n:build:production"
+            },
+            "si": {
+              "browserTarget": "angular-i18n:build:si"
             }
           }
         },
