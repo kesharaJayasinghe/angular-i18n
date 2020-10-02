@@ -68,6 +68,10 @@
           <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="3990133897753911565" datatype="html">
+        <source>Created by <x id="PH"/></source>
+        <target>නිර්මාණය <x id="PH"/></target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   // title = 'angular-i18n';
+  company: string = "MyCompany"
+  created_by: string = $localize`Created by ${this.company}`
+  localeList: object = [
+    { code: 'en-US', label: 'English' },
+    { code: 'si', label: 'සිංහල'}
+  ]
   tasksCount: number = 15;
 
   today: number = Date.now();

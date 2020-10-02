@@ -1,34 +1,62 @@
-<div class="card">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <header>
+    <div class="dropdown">
+      <button class="dropbtn"><i class="fa fa-language"></i></button>
+      <div class="dropdown-content">
+        <div *ngFor="let locale of localeList">
+          <a href="/{{ locale.code }}/">
+            {{ locale.label }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <h1 i18n="main header|Friendly welcoming message@@welcomeMsg">
-    Hello Sri Lanka!
-  </h1>
+  <div class="card">
+    <div class="dropdown">
+      <span></span>
+    </div>
 
-  <p>
-    <a i18n i18n-href i18n-title href="/en-US/portfolio" title="My portfolio" style="color: black;"
-      >Portfolio</a
-    >
-  </p>
+    <h1 i18n="main header|Friendly welcoming message@@welcomeMsg">
+      Hello Sri Lanka!
+    </h1>
 
-  <p i18n>
-    {tasksCount, plural, zero {no tasks} one {{{tasksCount}} task} few
-    {{{tasksCount}} tasks} many {{{tasksCount}} tasks} other
-    {{{tasksCount}} tasks}}
-  </p>
+    <p>
+      <a
+        i18n
+        i18n-href
+        i18n-title
+        href="/en-US/portfolio"
+        title="My portfolio"
+        style="color: black"
+        >Portfolio</a
+      >
+    </p>
 
-  <p>{{ today | date:'fullDate' }}</p>
+    <p i18n>
+      {tasksCount, plural, zero {no tasks} one {{{tasksCount}} task} few
+      {{{tasksCount}} tasks} many {{{tasksCount}} tasks} other
+      {{{tasksCount}} tasks}}
+    </p>
 
-  <p>
-    <span i18n>Gender: {genderCode, select, 0 {Male}, 1{Female}, other {Unknown}}</span>
-  </p>
+    <p>{{ today | date: "fullDate" }}</p>
 
-  <p>
-    <button (click)="male()" style="margin: 6px;">Male</button>
-    <button (click)="male()" style="margin: 6px;">Female</button>
-    <button (click)="male()" style="margin: 6px;">Other</button>
-  </p>
+    <p>
+      <span i18n
+        >Gender: {genderCode, select, 0 {Male}, 1{Female}, other
+        {Unknown}}</span
+      >
+    </p>
 
-  <ng-container i18n>Copyrights 2020</ng-container>
+    <p>
+      <button (click)="male()" style="margin: 6px">Male</button>
+      <button (click)="male()" style="margin: 6px">Female</button>
+      <button (click)="male()" style="margin: 6px">Other</button>
+    </p>
 
-</div>
+    <p>{{ created_by }}</p>
+
+    <ng-container i18n>Copyrights 2020</ng-container>
+  </div>
+
 
